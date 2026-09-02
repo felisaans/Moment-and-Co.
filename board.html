@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Custom &amp; Sewa Papan — Moment & Co.</title>
+<meta name="description" content="Sesuaikan kata-kata pada papan ucapan akrilik sewaan Anda, lihat pratinjaunya secara langsung, lalu ajukan sewa melalui WhatsApp.">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a href="index.html" class="brand">Moment <span>&amp; Co.</span></a>
+    <nav class="main-nav" id="mainNav">
+      <ul>
+        <li><a href="index.html">Beranda</a></li>
+        <li><a href="index.html#desain">Desain</a></li>
+        <li><a href="index.html#tentang">Tentang Kami</a></li>
+        <li><a href="index.html#kontak">Kontak</a></li>
+      </ul>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Buka menu" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+</header>
+
+<div class="page-header-strip">
+  <div class="wrap selected-design-bar">
+    <div>
+      <div class="label">Desain terpilih</div>
+      <h2 id="selDesignName">—</h2>
+      <div class="price" id="selDesignPrice"></div>
+    </div>
+    <a href="index.html#desain" class="change-design">Ganti Desain</a>
+  </div>
+</div>
+
+<main>
+  <form id="orderForm" novalidate>
+
+    <!-- Banner error global — tampil di atas semua section saat validasi gagal,
+         lalu halaman otomatis scroll ke field pertama yang bermasalah -->
+    <div class="wrap">
+      <p class="form-error-banner" id="formErrorBanner">Beberapa data belum lengkap. Mohon periksa kembali kolom yang ditandai.</p>
+    </div>
+
+    <!-- CUSTOMIZATION + LIVE PREVIEW -->
+    <section class="builder" id="kustomisasi">
+      <div class="wrap">
+        <div class="builder-grid">
+
+          <div class="form-card">
+            <h2>Kustomisasi Papan</h2>
+            <p class="form-sub">Isi kata-katanya, pratinjau di sebelah akan otomatis diperbarui.</p>
+
+            <div class="field">
+              <label for="fCongrats">Ucapan</label>
+              <input type="text" id="fCongrats" value="Selamat" maxlength="30">
+            </div>
+
+            <div class="field">
+              <label for="fNote">Catatan Singkat <span class="hint">(opsional)</span></label>
+              <input type="text" id="fNote" placeholder="Contoh: Atas gelar Sarjana Pertanian" maxlength="40">
+            </div>
+
+            <div class="field">
+              <label for="fOccasion">Acara</label>
+              <select id="fOccasion">
+                <option value="Wisuda">Wisuda</option>
+                <option value="Pernikahan">Pernikahan</option>
+                <option value="Grand Opening">Grand Opening</option>
+                <option value="Soft Opening">Soft Opening</option>
+                <option value="Ulang Tahun ke-">Ulang Tahun ke-</option>
+                <option value="Pelantikan">Pelantikan</option>
+                <option value="Anniversary">Anniversary</option>
+                <option value="Lainnya">Lainnya</option>
+              </select>
+            </div>
+
+            <div class="field" id="fieldName">
+              <label for="fName">Nama di Papan</label>
+              <input type="text" id="fName" placeholder="Contoh: Ayu Dia Salma, S.P" maxlength="60">
+              <p class="error-msg">Nama di papan wajib diisi.</p>
+            </div>
+
+            <div class="field" id="fieldMessage">
+              <label for="fMessage">Pesan</label>
+              <textarea id="fMessage" placeholder="Contoh: Selamat atas gelarnya. Semoga sukses selalu kedepannya." maxlength="140"></textarea>
+              <p class="error-msg">Pesan wajib diisi.</p>
+            </div>
+
+            <div class="field">
+              <label for="fFrom">Dari</label>
+              <input type="text" id="fFrom" placeholder="Contoh: Elya" maxlength="40">
+            </div>
+          </div>
+
+          <div class="preview-wrap">
+            <p class="preview-label">Pratinjau Langsung</p>
+            <div class="board-frame">
+              <span class="pv-congrats" id="pvCongrats">Selamat</span>
+              <span class="pv-note" id="pvNote"></span>
+              <span class="pv-name" id="pvName">Nama Anda</span>
+              <span class="pv-message" id="pvMessage">Pesan Anda akan muncul di sini.</span>
+              <span class="pv-from" id="pvFrom"></span>
+            </div>
+            <p class="preview-note">Ini hanya simulasi tampilan. Warna &amp; posisi cetak asli menyesuaikan desain akrilik yang dipilih.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CUSTOMER & DELIVERY INFO -->
+    <section class="panel-pad" id="info">
+      <div class="wrap">
+        <div class="form-card">
+          <h2>Informasi Anda</h2>
+          <p class="form-sub">Data ini kami gunakan untuk mengonfirmasi, mengantarkan, dan mengambil kembali papan setelah acara selesai.</p>
+
+          <div class="field" id="fieldCustName">
+            <label for="cName">Nama Lengkap</label>
+            <input type="text" id="cName" placeholder="Nama lengkap Anda">
+            <p class="error-msg">Nama wajib diisi.</p>
+          </div>
+
+          <div class="field" id="fieldCustPhone">
+            <label for="cPhone">Nomor WhatsApp</label>
+            <input type="tel" id="cPhone" placeholder="Contoh: 08123456789">
+            <p class="error-msg">Nomor WhatsApp wajib diisi.</p>
+          </div>
+
+          <div class="field" id="fieldEventDate">
+            <label for="cEventDate">Tanggal Acara (Sewa)</label>
+            <input type="date" id="cEventDate">
+            <p class="error-msg">Tanggal acara wajib diisi.</p>
+          </div>
+
+          <div class="field" id="fieldCustAddress">
+            <label for="cAddress">Alamat Pengantaran</label>
+            <textarea id="cAddress" placeholder="Contoh: Jl. Melati No. 10, Bandung"></textarea>
+            <p class="error-msg">Alamat pengantaran wajib diisi.</p>
+          </div>
+
+          <div class="field">
+            <label for="cNotes">Catatan Pengantaran &amp; Pengambilan <span class="hint">(opsional)</span></label>
+            <textarea id="cNotes" placeholder="Contoh: Tolong antar setelah jam 3 sore, papan diambil kembali keesokan harinya"></textarea>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAYMENT -->
+    <section class="panel-pad" id="pembayaran">
+      <div class="wrap">
+        <div class="form-card">
+          <h2>Metode Pembayaran</h2>
+          <p class="form-sub">Pilih salah satu untuk biaya sewa, pembayaran dikonfirmasi lewat WhatsApp.</p>
+
+          <div class="payment-options" id="paymentOptions">
+            <label class="payment-option">
+              <input type="radio" name="payment" value="Transfer Bank">
+              <span>
+                <span class="pay-name">Transfer Bank</span><br>
+                <span class="pay-desc">BCA / Mandiri / BRI, termasuk biaya sewa &amp; jaminan, bukti transfer dikirim via WhatsApp</span>
+              </span>
+            </label>
+            <label class="payment-option">
+              <input type="radio" name="payment" value="COD (Bayar di Tempat)">
+              <span>
+                <span class="pay-name">COD (Bayar di Tempat)</span><br>
+                <span class="pay-desc">Bayar tunai saat papan diantar, jaminan dikembalikan saat papan diambil kembali</span>
+              </span>
+            </label>
+            <label class="payment-option">
+              <input type="radio" name="payment" value="QRIS">
+              <span>
+                <span class="pay-name">QRIS</span><br>
+                <span class="pay-desc">Scan &amp; bayar biaya sewa dari e-wallet atau m-banking apa saja</span>
+              </span>
+            </label>
+          </div>
+          <p class="error-msg" id="paymentError" style="display:none;">Pilih salah satu metode pembayaran.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SUMMARY + SUBMIT -->
+    <section class="panel-pad" id="ringkasan">
+      <div class="wrap">
+        <div class="summary-card">
+          <h2>Ringkasan Sewa</h2>
+          <dl class="summary-grid">
+            <div class="summary-row"><dt>Desain</dt><dd id="sumDesign">—</dd></div>
+            <div class="summary-row"><dt>Acara</dt><dd id="sumOccasion">—</dd></div>
+            <div class="summary-row"><dt>Tanggal Acara</dt><dd id="sumEventDate">—</dd></div>
+            <div class="summary-row"><dt>Nama di Papan</dt><dd id="sumName">—</dd></div>
+            <div class="summary-row"><dt>Penyewa</dt><dd id="sumCustomer">—</dd></div>
+            <div class="summary-row"><dt>Alamat Pengantaran</dt><dd id="sumAddress">—</dd></div>
+            <div class="summary-row"><dt>Metode Pembayaran</dt><dd id="sumPayment">—</dd></div>
+          </dl>
+          <div class="summary-total">
+            <span>Total Sewa</span>
+            <span id="sumPrice">Rp0</span>
+          </div>
+        </div>
+
+        <div class="order-submit">
+          <button type="submit" class="btn btn-primary">Ajukan Sewa via WhatsApp</button>
+          <p class="submit-note">Anda akan diarahkan ke WhatsApp untuk mengirim detail sewa ini.</p>
+        </div>
+      </div>
+    </section>
+
+  </form>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div>
+      <div class="brand">Moment <span>&amp; Co.</span></div>
+      <p>Studio penyewaan papan ucapan akrilik custom untuk momen-momen yang layak dikenang, satu per satu.</p>
+    </div>
+    <div>
+      <h4>Tautan</h4>
+      <ul>
+        <li><a href="index.html">Beranda</a></li>
+        <li><a href="index.html#desain">Desain</a></li>
+        <li><a href="index.html#tentang">Tentang Kami</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Kontak</h4>
+      <ul>
+        <li><a href="https://wa.me/6281234567890" target="_blank" rel="noopener">WhatsApp: 0812-3456-7890</a></li>
+        <li><a href="mailto:momentandco@gmail.com">momentandco@gmail.com</a></li>
+        <li><a href="#" onclick="return false;">Instagram @momentandco.id</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap footer-bottom">
+    © 2026 Moment &amp; Co. Semua papan dibuat dengan tangan, satu per satu.
+  </div>
+</footer>
+
+<script src="js/nav.js"></script>
+<script src="js/data.js"></script>
+<script src="js/board.js"></script>
+</body>
+</html>
