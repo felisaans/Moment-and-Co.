@@ -4,7 +4,7 @@
 
 const DESIGNS = [
   { id: 1,  name: "Fuchsia Finale", occasion: "Wisuda / Ulang Tahun", price: 50000, img: "images/desain1.jpg" },
-  { id: 2,  name: "Scarlet Radiance", occasion: "Wisuda", price: 65000, img: "images/desain2.jpg" },
+  { id: 2,  name: "Scarlet Radiance", occasion: "Wisuda / Pelantikan", price: 65000, img: "images/desain2.jpg" },
   { id: 3,  name: "Ethereal Pastels", occasion: "Wisuda / Pernikahan / Opening", price: 65000, img: "images/desain3.jpg" },
   { id: 4,  name: "Blush Rosace", occasion: "Wisuda / Ulang Tahun", price: 95000, img: "images/desain4.jpg" },
   { id: 5,  name: "Natural Ivory", occasion: "Wisuda / Pernikahan / Opening", price: 75000, img: "images/desain5.jpg" },
