@@ -18,6 +18,10 @@
   --beige:#EFE4D3;
   --line:#E3D6C1;
 
+  /* Muted maroon for board CTA */
+  --maroon-muted: #7A3B3D;
+  --maroon-muted-dark: #662f31;
+
   --font-display:'Fraunces', serif;
   --font-body:'Work Sans', sans-serif;
 
@@ -345,6 +349,18 @@ input,select,textarea{ font-family:inherit; font-size:1rem; }
 .board-price{ color:var(--espresso); font-weight:600; margin:2px 0 14px; }
 .price-unit{ color:var(--taupe); font-weight:400; font-size:0.8rem; }
 .board-body .btn{ margin-top:auto; }
+
+/* Override: make the board card CTA a muted maroon while keeping other primary buttons unchanged */
+.board-body .btn-primary{
+  background:var(--maroon-muted);
+  color:var(--ivory);
+  border-color:transparent;
+}
+.board-body .btn-primary:hover{
+  background:var(--maroon-muted-dark);
+  box-shadow:var(--shadow-lift);
+  transform:translateY(-1px);
+}
 
 /* ---------- Footer ---------- */
 .site-footer{
