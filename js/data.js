@@ -8,7 +8,7 @@ const DESIGNS = [
   { id: 3,  name: "Ethereal Pastels", occasion: "Wisuda / Pernikahan / Opening", price: 65000, img: "images/desain3.jpg" },
   { id: 4,  name: "Blush Rosace", occasion: "Wisuda / Ulang Tahun", price: 95000, img: "images/desain4.jpg" },
   { id: 5,  name: "Natural Ivory", occasion: "Wisuda / Pernikahan / Opening", price: 75000, img: "images/desain5.jpg" },
-  { id: 6,  name: "Blush Radiance", occasion: "Pernikahan / Anniversary", price: 55000, img: "images/desain6.jpg" },
+  { id: 6,  name: "Blush Radiance", occasion: "Pernikahan / Anniversary / Opening", price: 55000, img: "images/desain6.jpg" },
   { id: 7,  name: "Mauve Serenade", occasion: "Wisuda / Pernikahan", price: 85000, img: "images/desain7.jpg" },
   { id: 8,  name: "Serene Azure", occasion: "Wisuda / Pelantikan", price: 85000, img: "images/desain8.jpg" },
   { id: 9,  name: "Crimson Arch", occasion: "Wisuda / Pelantikan / Pernikahan", price: 55000, img: "images/desain9.jpg" },
