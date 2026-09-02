@@ -14,7 +14,7 @@ const DESIGNS = [
   { id: 9,  name: "Crimson Arch", occasion: "Wisuda / Pelantikan / Pernikahan", price: 55000, img: "images/desain9.jpg" },
   { id: 10, name: "Fuchsia Bloom Box", occasion: "Pernikahan / Anniversary", price: 45000, img: "images/desain10.jpg" },
   { id: 11, name: "Celestial Frame", occasion: "Pelantikan / Pernikahan", price: 50000, img: "images/desain11.jpg" },
-  { id: 12, name: "Dusty Rose Canvas", occasion: "Anniversary / Pernikahan", price: 65000, img: "images/desai12.jpg" },
+  { id: 12, name: "Dusty Rose Canvas", occasion: "Anniversary / Pernikahan", price: 65000, img: "images/desain12.jpg" },
   { id: 13, name: "Noir Elegance", occasion: "Pelantikan / Wisuda / Opening", price: 75000, img: "images/desain13.jpg" },
   { id: 14, name: "Vintage Ivory", occasion: "Pernikahan", price: 80000, img: "images/desain14.jpg" },
   { id: 15, name: "Peony Horizont", occasion: "Semua Acara", price: 75000, img: "images/desain15.jpg" },
