@@ -45,3 +45,70 @@ function initSearch(){
 renderDesigns(DESIGNS);
 initSearch();
 initNavToggle();
+
+/* =========================================================
+   SCROLL REVEAL
+   ========================================================= */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  const revealElements = [
+    ".hero-eyebrow",
+    ".hero h1",
+    ".hero-lead",
+    ".hero-actions",
+    ".hero-actions .btn-primary",
+    ".designs-section .section-head h2",
+    ".designs-section .section-head p",
+    ".search-bar",
+    ".board-card",
+    ".board-body .btn-primary"
+  ];
+
+  const elements = document.querySelectorAll(
+    revealElements.join(", ")
+  );
+
+  elements.forEach((el) => {
+    el.classList.add("scroll-reveal");
+  });
+
+
+  /* Stagger khusus board card */
+  document.querySelectorAll(".board-card").forEach((card, index) => {
+    const delay = (index % 3) * 120;
+    card.style.setProperty("--reveal-delay", `${delay}ms`);
+  });
+
+
+  /* Intersection Observer */
+  const observer = new IntersectionObserver(
+    (entries, obs) => {
+
+      entries.forEach((entry) => {
+
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+
+          /*
+           * Stop observing setelah muncul.
+           * Jadi animasi hanya terjadi sekali.
+           */
+          obs.unobserve(entry.target);
+        }
+
+      });
+
+    },
+    {
+      threshold: 0.15,
+      rootMargin: "0px 0px -50px 0px"
+    }
+  );
+
+
+  elements.forEach((el) => {
+    observer.observe(el);
+  });
+
+});
