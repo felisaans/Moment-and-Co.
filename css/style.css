@@ -701,30 +701,30 @@ input,select,textarea{ font-family:inherit; font-size:1rem; }
 .payment-option .pay-desc{ font-size:0.8rem; color:var(--taupe); }
 
 /* ---------- Live preview ---------- */
-.preview-wrap{ position; top:96px; }
-.preview-label{ font-size:0.86rem; font-weight:600; color(--sage-dark); margin-bottom:12px; }
+.preview-wrap{ position:sticky; top:96px; }
+.preview-label{ font-size:0.86rem; font-weight:600; color:var(--sage-dark); margin-bottom:12px; }
 
 .board-frame{
-background(160deg, #FFFDF9 0%, #F3E9D8 100%);
-border:1px solid var(--line);
-border-radius:18px;
-box-shadow(--shadow-lift);
-aspect-ratio:4/5;
-position;
-padding:38px 30px;
-display;
-flex-direction;
-align-items;
-justify-content;
-text-align;
-gap:14px;
+  background:linear-gradient(160deg, #FFFDF9 0%, #F3E9D8 100%);
+  border:1px solid var(--line);
+  border-radius:18px;
+  box-shadow:var(--shadow-lift);
+  aspect-ratio:4/5;
+  position:relative;
+  padding:38px 30px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  gap:14px;
 }
 .board-frame::before{
-content:"";
-position; inset:14px;
-border:1px solid rgba(59,46,39,0.14);
-border-radius:10px;
-pointer-events;
+  content:"";
+  position:absolute; inset:14px;
+  border:1px solid rgba(59,46,39,0.14);
+  border-radius:10px;
+  pointer-events:none;
 }
 .pv-congrats{
   font-family:var(--font-display);
