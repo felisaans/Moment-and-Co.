@@ -246,6 +246,181 @@ input,select,textarea{ font-family:inherit; font-size:1rem; }
   .hero-art{ order:-1; max-width:300px; margin:0 auto; }
 }
 
+/* =========================================================
+   SCROLL REVEAL
+   ========================================================= */
+
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(35px);
+  transition:
+    opacity 0.75s ease,
+    transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+
+.scroll-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* Variasi untuk elemen yang masuk dari kiri */
+.scroll-reveal.from-left {
+  transform: translateX(-35px);
+}
+
+.scroll-reveal.from-left.is-visible {
+  transform: translateX(0);
+}
+
+
+/* Variasi untuk elemen yang masuk dari kanan */
+.scroll-reveal.from-right {
+  transform: translateX(35px);
+}
+
+.scroll-reveal.from-right.is-visible {
+  transform: translateX(0);
+}
+
+
+/* =========================================================
+   STAGGER BOARD CARD
+   ========================================================= */
+
+.board-card.scroll-reveal {
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+
+/* =========================================================
+   BUTTON EFFECT
+   ========================================================= */
+
+.btn-primary {
+  position: relative;
+  isolation: isolate;
+  overflow: visible;
+}
+
+
+/* Lingkaran cahaya di sekeliling button */
+.btn-primary::before {
+  content: "";
+  position: absolute;
+  inset: -4px;
+  border-radius: inherit;
+  z-index: -1;
+
+  background: linear-gradient(
+    120deg,
+    var(--rose),
+    var(--sage),
+    var(--rose),
+    var(--sage)
+  );
+
+  background-size: 300% 300%;
+
+  opacity: 0;
+  transform: scale(0.92);
+
+  transition:
+    opacity 0.35s ease,
+    transform 0.35s ease;
+
+  animation: buttonAura 4s ease infinite;
+}
+
+
+/* Glow halus */
+.btn-primary::after {
+  content: "";
+  position: absolute;
+  inset: -7px;
+  border-radius: inherit;
+  z-index: -2;
+
+  border: 1px solid rgba(223, 175, 166, 0.45);
+
+  opacity: 0;
+  transform: scale(0.95);
+
+  transition:
+    opacity 0.35s ease,
+    transform 0.35s ease;
+}
+
+
+/* Saat hover */
+.btn-primary:hover::before {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.btn-primary:hover::after {
+  opacity: 1;
+  transform: scale(1);
+}
+
+
+/* Animasi warna di sekeliling button */
+@keyframes buttonAura {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
+/* =========================================================
+   BUTTON PULSE KHUSUS CTA
+   ========================================================= */
+
+.hero-actions .btn-primary::after,
+.board-body .btn-primary::after {
+  animation: buttonPulse 2.8s ease-in-out infinite;
+}
+
+@keyframes buttonPulse {
+  0%,
+  100% {
+    opacity: 0.25;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.65;
+    transform: scale(1.06);
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .btn-primary::before,
+  .btn-primary::after {
+    animation: none;
+  }
+}
+
 /* ---------- Store info ---------- */
 .store-info{
   background:var(--beige);
