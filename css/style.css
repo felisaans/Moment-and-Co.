@@ -284,34 +284,23 @@ input,select,textarea{ font-family:inherit; font-size:1rem; }
   transform: translateX(0);
 }
 
-
-/* =========================================================
-   STAGGER BOARD CARD
-   ========================================================= */
-
-.board-card.scroll-reveal {
-  transition-delay: var(--reveal-delay, 0ms);
-}
-
-
-/* =========================================================
-   BUTTON EFFECT
-   ========================================================= */
+/* =========================================
+   PULSE BUTTON — SAMA UNTUK SEMUA BTN PRIMARY
+========================================= */
 
 .btn-primary {
   position: relative;
   isolation: isolate;
   overflow: visible;
+  z-index: 1;
 }
 
-
-/* Lingkaran cahaya di sekeliling button */
+/* Aura luar */
 .btn-primary::before {
   content: "";
   position: absolute;
-  inset: -4px;
+  inset: -7px;
   border-radius: inherit;
-  z-index: -1;
 
   background: linear-gradient(
     120deg,
@@ -320,88 +309,97 @@ input,select,textarea{ font-family:inherit; font-size:1rem; }
     var(--rose),
     var(--sage)
   );
-
   background-size: 300% 300%;
 
-  opacity: 0;
-  transform: scale(0.92);
+  filter: blur(7px);
+  opacity: 0.65;
 
-  transition:
-    opacity 0.35s ease,
-    transform 0.35s ease;
+  z-index: -2;
 
-  animation: buttonAura 4s ease infinite;
+  animation: buttonAura 3.5s ease-in-out infinite;
 }
 
-
-/* Glow halus */
+/* Ring pulse */
 .btn-primary::after {
   content: "";
   position: absolute;
-  inset: -7px;
+  inset: -5px;
   border-radius: inherit;
-  z-index: -2;
 
-  border: 1px solid rgba(223, 175, 166, 0.45);
+  border: 2px solid rgba(223, 175, 166, 0.65);
 
-  opacity: 0;
-  transform: scale(0.95);
+  box-shadow:
+    0 0 8px rgba(223, 175, 166, 0.45),
+    0 0 18px rgba(140, 154, 126, 0.35),
+    0 0 30px rgba(223, 175, 166, 0.22);
 
-  transition:
-    opacity 0.35s ease,
-    transform 0.35s ease;
+  opacity: 0.7;
+
+  z-index: -1;
+
+  animation: buttonPulse 2.2s ease-in-out infinite;
 }
 
 
-/* Saat hover */
-.btn-primary:hover::before {
-  opacity: 1;
-  transform: scale(1);
-}
-
-.btn-primary:hover::after {
-  opacity: 1;
-  transform: scale(1);
-}
-
-
-/* Animasi warna di sekeliling button */
+/* Aura bergerak */
 @keyframes buttonAura {
   0% {
     background-position: 0% 50%;
+    transform: scale(0.96);
+    opacity: 0.5;
   }
 
   50% {
     background-position: 100% 50%;
+    transform: scale(1.02);
+    opacity: 0.8;
   }
 
   100% {
     background-position: 0% 50%;
+    transform: scale(0.96);
+    opacity: 0.5;
   }
 }
 
 
-/* =========================================================
-   BUTTON PULSE KHUSUS CTA
-   ========================================================= */
-
-.hero-actions .btn-primary::after,
-.board-body .btn-primary::after {
-  animation: buttonPulse 2.8s ease-in-out infinite;
-}
-
+/* Pulse membesar-mengecil */
 @keyframes buttonPulse {
   0%,
   100% {
-    opacity: 0.25;
+    opacity: 0.45;
     transform: scale(1);
   }
 
   50% {
-    opacity: 0.65;
-    transform: scale(1.06);
+    opacity: 0.9;
+    transform: scale(1.08);
   }
 }
+
+
+/* Hover */
+.btn-primary:hover::before {
+  opacity: 0.9;
+  filter: blur(9px);
+}
+
+.btn-primary:hover::after {
+  opacity: 1;
+
+  box-shadow:
+    0 0 10px rgba(223, 175, 166, 0.65),
+    0 0 24px rgba(140, 154, 126, 0.5),
+    0 0 40px rgba(223, 175, 166, 0.35);
+}
+/* =========================================================
+   STAGGER BOARD CARD
+   ========================================================= */
+
+.board-card.scroll-reveal {
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
 
 
 /* =========================================================
