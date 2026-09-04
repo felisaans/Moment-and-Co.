@@ -199,7 +199,7 @@ input,select,textarea{ font-family:inherit; font-size:1rem; }
 }
 .hero-flower {
   position: absolute;
-  top: 20px;
+  top: 15px;
   left: 25px;
   width: 350px;
   height: auto;
@@ -208,8 +208,8 @@ input,select,textarea{ font-family:inherit; font-size:1rem; }
 }
 @media (max-width: 768px) {
   .hero-flower {
-    width: 300px;
-    top: 30px;
+    width: 230px;
+    top: 25px;
     left: 10px;
     opacity: 0.9;
   }
