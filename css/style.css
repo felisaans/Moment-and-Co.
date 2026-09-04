@@ -206,6 +206,17 @@ input,select,textarea{ font-family:inherit; font-size:1rem; }
   z-index: 2;
   pointer-events: none;
 }
+
+.hero-flower-preview {
+  position: absolute;
+  top: 7px;
+  left: 10px;
+  width: 400px;
+  height: auto;
+  z-index: 2;
+  pointer-events: none;
+}
+
 @media (max-width: 768px) {
   .hero-flower {
     width: 240px;
