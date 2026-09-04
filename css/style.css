@@ -201,16 +201,16 @@ input,select,textarea{ font-family:inherit; font-size:1rem; }
   position: absolute;
   top: 15px;
   left: 25px;
-  width: 350px;
+  width: 360px;
   height: auto;
   z-index: 2;
   pointer-events: none;
 }
 @media (max-width: 768px) {
   .hero-flower {
-    width: 230px;
-    top: 25px;
-    left: 10px;
+    width: 240px;
+    top: 15px;
+    left: 8px;
     opacity: 0.9;
   }
 }
