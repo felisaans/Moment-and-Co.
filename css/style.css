@@ -209,8 +209,8 @@ input,select,textarea{ font-family:inherit; font-size:1rem; }
 
 .hero-flower-preview {
   position: absolute;
-  top: 7px;
-  left: 10px;
+  top: 15px;
+  left: 5px;
   width: 400px;
   height: auto;
   z-index: 2;
@@ -219,6 +219,12 @@ input,select,textarea{ font-family:inherit; font-size:1rem; }
 
 @media (max-width: 768px) {
   .hero-flower {
+    width: 440px;
+    top: 15px;
+    left: 8px;
+    opacity: 0.9;
+  }
+   .hero-flower-preview {
     width: 240px;
     top: 15px;
     left: 8px;
