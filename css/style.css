@@ -194,6 +194,25 @@ input,select,textarea{ font-family:inherit; font-size:1rem; }
   grid-template-columns:1.05fr 0.85fr;
   gap:56px;
   align-items:center;
+   position: relative;
+   overflow: visible;
+}
+.hero-flower {
+  position: absolute;
+  top: -25px;
+  right: -20px;
+  width: 250px;
+  height: auto;
+  z-index: 3;
+  pointer-events: none;
+}
+@media (max-width: 768px) {
+  .hero-flower {
+    width: 180px;
+    top: -15px;
+    right: -25px;
+    opacity: 0.9;
+  }
 }
 .hero-eyebrow{
   font-family:var(--font-display);
