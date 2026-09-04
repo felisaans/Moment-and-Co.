@@ -200,7 +200,7 @@ input,select,textarea{ font-family:inherit; font-size:1rem; }
 .hero-flower {
   position: absolute;
   top: 20px;
-  left: 5px;
+  left: 25px;
   width: 330px;
   height: auto;
   z-index: 2;
