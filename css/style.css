@@ -225,9 +225,9 @@ input,select,textarea{ font-family:inherit; font-size:1rem; }
     opacity: 0.9;
   }
    .hero-flower-preview {
-    width: 350px;
+    width: 320px;
     top: 20px;
-    left: -5px;
+    left: -15px;
     opacity: 0.9;
   }
 }
