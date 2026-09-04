@@ -705,7 +705,13 @@ input,select,textarea{ font-family:inherit; font-size:1rem; }
 .preview-label{ font-size:0.86rem; font-weight:600; color:var(--sage-dark); margin-bottom:12px; }
 
 .board-frame{
-  background:linear-gradient(160deg, #FFFDF9 0%, #F3E9D8 100%);
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.72),
+      rgba(255, 255, 255, 0.28) 45%,
+      rgba(239, 228, 211, 0.18)
+    );
   border:1px solid var(--line);
   border-radius:18px;
   box-shadow:var(--shadow-lift);
